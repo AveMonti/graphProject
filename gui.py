@@ -1,5 +1,6 @@
 import sys
 import json
+import ast
 import networkx as nx
 import matplotlib.pyplot as plt
 from PyQt4 import QtGui
@@ -32,9 +33,15 @@ class Window(QtGui.QWidget):
         layout.addWidget(self.label)
 
     def handleButton(self):
-        myGraph = {0: [1,2,3], 1: [], 2: [1], 3: [4,5],4: [3,5], 5: [3,4,7], 6: [8], 7: [],8: [9], 9: []}
-        self.label.setText("{0: [1,2,3], 1: [], 2: [1], 3: [4,5],4: [3,5], 5: [3,4,7], 6: [8], 7: [],8: [9], 9: []}")
-        self.textbox.setText("")
+        graphValue = self.textbox.text()
+        print(graphValue)
+        myGraph = ast.literal_eval(self.textbox.text())
+        print(getRoots(graphValue))
+        #self.label.setText(getRoots(HelloValue))
+        #print(getRoots(HelloValue))
+
+
+
 
         list = generate_edges(myGraph)
         G = nx.DiGraph()
