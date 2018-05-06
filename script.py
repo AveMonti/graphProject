@@ -3,20 +3,20 @@ import matplotlib.pyplot as plt
 
 from getRoouts import getRoots
 
+def generate_edges(graph):
+    edges = []
+    for node in graph:
+        for neighbour in graph[node]:
+            edges.append((node, neighbour))
+
+    return edges
+
 if __name__ == "__main__":
     myGraph = {0: [1,2,3], 1: [], 2: [1], 3: [4,5],4: [3,5], 5: [3,4,7], 6: [8], 7: [],8: [9], 9: []}
-    xyz = getRoots(myGraph)
-    list = []
-    for keys in xyz.keys():
-        for x in (xyz[keys]):
-            value = (keys, x)
-            list.append(value)
-
-        # print (xyz[keys][1])
-
+    #spojna skladowa
     print(getRoots(myGraph))
-    print(list)
-
+    #rysowanie
+    list = generate_edges(myGraph)
     G = nx.DiGraph()
     G.add_edges_from(list)
     val_map = {'A': 1.0,
