@@ -2,6 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 from getRoouts import getRoots
+from gui import Window
 
 def generate_edges(graph):
     edges = []
