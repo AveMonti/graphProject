@@ -33,16 +33,15 @@ class Window(QtGui.QWidget):
         layout.addWidget(self.label)
 
     def handleButton(self):
-        graphValue = self.textbox.text()
+        graphValue = str(self.textbox.text())
         print(graphValue)
-        myGraph = ast.literal_eval(self.textbox.text())
-        print(getRoots(graphValue))
-        #self.label.setText(getRoots(HelloValue))
-        #print(getRoots(HelloValue))
+        print(type(graphValue))
+        myGraph = ast.literal_eval(graphValue)
+        print(type(myGraph))
 
-
-
-
+        print(getRoots(myGraph))
+        self.label.setText("Result " + str(getRoots(myGraph)))
+        
         list = generate_edges(myGraph)
         G = nx.DiGraph()
         G.add_edges_from(list)
