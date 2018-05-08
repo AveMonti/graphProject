@@ -1,4 +1,4 @@
-### Spojna Skladowa
+### Connected component (graph theory)
 
 ## Python lib:
 * sys
