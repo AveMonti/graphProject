@@ -13,10 +13,7 @@
 
 ## How to start?
 * Download all lib using pip install
-* ```
-python gui.py
-
-```
+* $ python gui.py
 * input type edges and connections between them like json:
 ```
 {
