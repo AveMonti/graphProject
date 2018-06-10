@@ -41,7 +41,7 @@ class Window(QtGui.QWidget):
 
         print(getRoots(myGraph))
         self.label.setText("Result " + str(getRoots(myGraph)))
-        
+
         list = generate_edges(myGraph)
         G = nx.DiGraph()
         G.add_edges_from(list)

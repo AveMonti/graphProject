@@ -1,4 +1,5 @@
 ### Connected component (graph theory)
+* 8 May
 
 ## Python lib:
 * sys
@@ -10,6 +11,31 @@
 
 <img src="/img/graph.png" height="688 " width="681" />
 
+## How to start?
+* Download all lib using pip install
+* ```
+python gui.py
+
+```
+* input type edges and connections between them like json:
+```
+{
+  0: [1,2,3],
+  1: [],
+  2: [1],
+  3: [4,5],
+  4: [3,5],
+  5: [3,4,7],
+  6: [8],
+  7: [],
+  8: [9],
+  9: []
+}
+
+```
+
+
+## Algorythm getRoots
 
 ```
 def getRoots(aNeigh):
